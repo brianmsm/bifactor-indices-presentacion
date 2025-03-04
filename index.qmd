@@ -1,0 +1,190 @@
+---
+title: "Aplicación de los Índices en Modelos Bifactor"
+subtitle: "Asignatura: Validez"
+institute: "Universidad Complutense de Madrid"
+author: Brian N. Peña-Calero
+format:
+  metropolis-revealjs:
+    mouse-wheel: true
+    lang: es
+    code-link: true
+date: "2024-04-01"
+date-format: "DD MMMM, YYYY"
+execute: 
+  echo: true
+  dpi: 300
+  cache: true
+slslslslslide-number: true
+bibliography: references.bib
+embed-resources: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Evaluaciones de los índices en Bifactor
+
+@rodriguez2016 indica 3 aspectos interpretativos relevantes en los índices bifactor:
+
+1.  **¿Los puntajes totales reflejan variación en una sola variable latente?** (Indicadores: $\omega$, $\omega_H$); y, de forma relacionada, ¿los puntajes de subescala reflejan varianza confiable independiente del factor general? (Indicadores: $\omega_S$, $\omega_{HS}$)
+
+2.  **¿Pueden los ítems usarse para especificar variables latentes en un contexto SEM?** Indicadores: FD, H
+
+3.  **¿Son las medidas esencialmente unidimensionales y, por lo tanto, deben especificarse como una única variable latente en SEM?**\
+    Indicadores: ECV, PUC
+
+## Puntajes Totales {auto-animate="true"}
+
+Uno de los más reportados sería el $\omega$, que en un modelo bifactor, representa la varianza común atribuido a la suma del factor general y los factores específicos. *Un valor alto, refleja multidimensionalidad*.
+
+$$
+\omega = 
+\frac{
+\Bigl(\sum \lambda_{\text{gen}}\Bigr)^2 
++ \sum_{k=1}^K \Bigl(\sum \lambda_{\text{grp}_k}\Bigr)^2
+}{
+\Bigl(\sum \lambda_{\text{gen}}\Bigr)^2 
++ \sum_{k=1}^K \Bigl(\sum \lambda_{\text{grp}_k}\Bigr)^2
++ \sum \bigl(1 - h^2\bigr)
+}
+$$
+
+- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+- $1-h^2$: Representa el error de medición.
+
+## Puntajes Totales {auto-animate="true"}
+
+En tanto, el $omega_H$ estudia esta varianza común pero solo la parte que se encuentra atribuída al Factor General, eliminando la parte de los factores específicos.
+
+$$
+\omega_H = 
+\frac{
+\Bigl(\sum \lambda_{\text{gen}}\Bigr)^2
+}{
+\Bigl(\sum \lambda_{\text{gen}}\Bigr)^2 
++ \sum_{k=1}^K \Bigl(\sum \lambda_{\text{grp}_k}\Bigr)^2
++ \sum \bigl(1 - h^2\bigr)
+}
+$$
+
+- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+- $1-h^2$: Representa el error de medición.
+
+## Puntajes Sub-Escala:
+
+Estima la fiabilidad de la sub-escala contando la varianza común del factor general y del factor en específico. Habitualmente esto, podría ser alto y sería un peligro evaluarlo así.
+
+$$
+\omega_S \;=\; 
+\frac{
+\Bigl(\sum \lambda_{\text{gen}}\Bigr)^2 
+\;+\; 
+\Bigl(\sum \lambda_{k=1}\Bigr)^2
+}{
+\Bigl(\sum \lambda_{\text{gen}}\Bigr)^2 
+\;+\; 
+\Bigl(\sum \lambda_{k=1}\Bigr)^2
+\;+\; 
+\sum \bigl(1 - h^2\bigr)
+}
+$$
+
+- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+- $1-h^2$: Representa el error de medición.
+
+## Puntajes Sub-Escala:
+
+Este omega jerárquico evaluado en la sub-escala, evalúa que tanto de la varianza común del factor específico es únicamente del factor específico. *Si el modelo bifactor ideal no se sostiene, este indicador debería ser alto*.
+
+$$
+\omega_{HS} = 
+\frac{
+\Bigl(\sum \lambda_{\text{grp}_k}\Bigr)^2
+}{
+\Bigl(\sum \lambda_{\text{gen}}\Bigr)^2 
++ \sum_{k=1}^K \Bigl(\sum \lambda_{\text{grp}_k}\Bigr)^2
++ \sum \bigl(1 - h^2\bigr)
+}
+$$
+
+- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+- $1-h^2$: Representa el error de medición.
+
+
+## Índices de FD y H
+
+Para evaluar si los ítems son adecuados para definir variables latentes en un modelo SEM, se utilizan:
+
+-   **Factor Determinacy (FD):**\
+    Mide la correlación entre los puntajes estimados y la verdadera variable latente. Valores cercanos a 1 indican que el factor está bien definido.
+    
+    $$
+    FD \;=\; 
+    \operatorname{diag}\Bigl(\Phi \,\Lambda^T\, \Sigma^{-1}\,\Lambda \,\Phi\Bigr)^{\tfrac{1}{2}}
+    $$
+
+--
+
+## Índices de FD y H
+
+Para evaluar si los ítems son adecuados para definir variables latentes en un modelo SEM, se utilizan:
+
+-   **Índice H (Construct Replicability):**\
+    Indica qué tan bien está definido el constructo a partir de sus indicadores. Se suele considerar un valor H ≥ 0.80 como indicador de un constructo robusto.
+    
+    $$
+    H \;=\; 
+    \frac{1}{
+    1 \;+\; \dfrac{1}{
+    \displaystyle \sum_{i=1}^k \dfrac{\lambda_i^2}{1 - \lambda_i^2}
+    }
+    }
+    $$
+
+## Unidimensionalidad esencial
+
+Para determinar si la medida puede tratarse como esencialmente unidimensional, se utilizan:
+
+-   **Explained Common Variance (ECV):**\
+    $$
+    \text{ECV} \;=\; 
+    \frac{
+    \sum \lambda_{\text{gen}}^2
+    }{
+    \sum \lambda_{\text{gen}}^2 
+    + \sum_{k=1}^K \sum \lambda_{\text{grp}_k}^2
+    }
+    $$
+    Un valor alto (p.ej., \> 0.70) sugiere que la mayor parte de la varianza común se debe al factor general.
+
+--
+
+## Unidimensionalidad esencial
+
+Para determinar si la medida puede tratarse como esencialmente unidimensional, se utilizan:
+
+-   **Percentage of Uncontaminated Correlations (PUC):**\
+    Mide el porcentaje de correlaciones entre ítems que son atribuibles únicamente al factor general.\
+    Un PUC elevado (por ejemplo, \> 0.80) refuerza la interpretación unidimensional.
+    
+    $$
+    \text{PUC} \;=\; 
+    1 \;-\; 
+    \frac{
+    \text{número de correlaciones entre ítems que comparten el mismo factor de grupo}
+    }{
+    \text{número total de correlaciones}
+    }
+    $$
+
+
+
+
+## References
+
+::: {#refs style="line-height: 2;"}
+:::
+
