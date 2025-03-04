@@ -137,6 +137,13 @@ simulaBifactor <- function(sampleSize = 1000,
     multifactor_model <- paste0(multifactor_model, line)
   }
   
+  ###############################
+  # Especificación del modelo unifactorial
+  ###############################
+  
+  # Construir el modelo unifactorial: todos los ítems cargan en un solo factor (U)
+  unifactor_model <- paste0("U =~ ", paste(item_names, collapse = " + "), "\n")
+  
   # Ajuste de los modelos con lavaan, pasando el argumento estimator y std.lv = TRUE
 
   fit_bifactor <- cfa(bifactor_model, data = sim_data, 
@@ -145,6 +152,9 @@ simulaBifactor <- function(sampleSize = 1000,
   fit_multi <- cfa(multifactor_model, data = sim_data, 
                    estimator = estimator,
                    std.lv = TRUE)
+  fit_uni <- cfa(unifactor_model, data = sim_data, 
+                 estimator = estimator,
+                 std.lv = TRUE)
   
   return(list(sim_data = sim_data,
               loadings_gen = loadings_gen,
@@ -152,7 +162,8 @@ simulaBifactor <- function(sampleSize = 1000,
               bifactor_model = bifactor_model,
               multifactor_model = multifactor_model,
               fit_bifactor = fit_bifactor,
-              fit_multi = fit_multi))
+              fit_multi = fit_multi,
+              fit_uni = fit_uni))
 }
 # 
 # # Ejemplos de uso:
