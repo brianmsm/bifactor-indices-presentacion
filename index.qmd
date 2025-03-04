@@ -10,6 +10,7 @@ format:
     code-link: true
     chalkboard: true
     progress: true
+    slide-number: true
 date: now
 date-format: "DD MMMM, YYYY"
 execute: 
@@ -352,6 +353,30 @@ psymetrics::plot_factor_loadings(
 bifactorIndices(result_ideal$fit_bifactor)
 ```
 
+## ¿Unidimesionalidad tiene sentido?
+
+```{r}
+summary(result_ideal$fit_uni, fit.measures = TRUE, standardized = TRUE)
+```
+
+## ¿Unidimesionalidad tiene sentido?
+
+```{r}
+modificationindices(result_ideal$fit_uni,
+                    maximum.number = 10,
+                    sort. = TRUE)
+```
+
+## Comparación de ajustes
+
+```{r}
+psymetrics::compare_model_fit(
+  result_ideal$fit_uni,
+  result_ideal$fit_multi,
+  result_ideal$fit_bifactor
+)
+```
+
 # Ejemplificación de un Bifactor con FE dominante
 
 ## Ejemplificación
@@ -459,6 +484,13 @@ psymetrics::plot_factor_loadings(
 
 ```{r}
 bifactorIndices(result_1f$fit_bifactor)
+```
+
+
+## Desajuste del unidimensional
+
+```{r}
+summary(result_1f$fit_uni, fit.measures = TRUE, standardized = TRUE)
 ```
 
 ## References
