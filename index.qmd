@@ -223,15 +223,15 @@ bif_plot01 <- semPaths(
   bifactor = "F",
   rotation = 2,
   sizeMan = 8,
-  sizeMan2 = 2,
-  sizeLat = 6,
+  sizeMan2 = 2.5,
+  sizeLat = 7,
   residuals = FALSE,
-  edge.label.cex = 0.7,
+  edge.label.cex = 0.8,
   edge.color = "black",
   intercepts = FALSE,
   thresholds = FALSE,
   cardinal = "lat",
-  label.cex = 1.2,
+  label.cex = 0.9,
   mar = c(1, 1, 1, 1)
 ) 
 
@@ -267,16 +267,16 @@ semPaths(
   layout = "tree2",
   rotation = 2,
   sizeMan = 8,
-  sizeMan2 = 2,
-  sizeLat = 6,
+  sizeMan2 = 2.5,
+  sizeLat = 7,
   residuals = FALSE,
-  edge.label.cex = 0.7,
+  edge.label.cex = 0.8,
   edge.color = "black",
   intercepts = FALSE,
   thresholds = FALSE,
   cardinal = "all",
   curvature = 2,
-  label.cex = 1.2,
+  label.cex = 0.9,
   mar = c(1, 4, 1, 2)
 )
 ```
@@ -290,6 +290,7 @@ semPaths(
 #| fig-height: 6
 #| fig-width: 5
 #| fig-align: center
+#| cache-rebuild: true
 
 plot(bif_plot01)
 ```
@@ -415,15 +416,15 @@ bif_plot02 <- semPaths(
   bifactor = "F",
   rotation = 2,
   sizeMan = 8,
-  sizeMan2 = 2,
-  sizeLat = 6,
+  sizeMan2 = 2.5,
+  sizeLat = 7,
   residuals = FALSE,
-  edge.label.cex = 0.7,
+  edge.label.cex = 0.8,
   edge.color = "black",
   intercepts = FALSE,
   thresholds = FALSE,
   cardinal = "lat",
-  label.cex = 1.2,
+  label.cex = 0.9,
   mar = c(1, 1, 1, 1)
 ) 
 
