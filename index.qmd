@@ -8,7 +8,9 @@ format:
     mouse-wheel: true
     lang: es
     code-link: true
-date: "2024-04-01"
+    chalkboard: true
+    progress: true
+date: now
 date-format: "DD MMMM, YYYY"
 execute: 
   echo: true
@@ -17,7 +19,6 @@ execute:
 slslslslslide-number: true
 lightbox: true
 bibliography: references.bib
-embed-resources: true
 editor_options: 
   chunk_output_type: console
 ---
