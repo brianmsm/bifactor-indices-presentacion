@@ -822,6 +822,175 @@ item_4_5 0.8404893
 item_4_6 0.8576274</code></pre>
 </div>
 </div>
+</section><section id="unidimesionalidad-tiene-sentido" class="slide level2"><h2>¿Unidimesionalidad tiene sentido?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">summary</span>(result_ideal<span class="sc">$</span>fit_uni, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lavaan 0.6-19 ended normally after 19 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        48
+
+  Number of observations                          1000
+
+Model Test User Model:
+                                              Standard      Scaled
+  Test Statistic                              2606.856    2634.837
+  Degrees of freedom                               252         252
+  P-value (Chi-square)                           0.000       0.000
+  Scaling correction factor                                  0.989
+    Yuan-Bentler correction (Mplus variant)                       
+
+Model Test Baseline Model:
+
+  Test statistic                             25410.561   25585.788
+  Degrees of freedom                               276         276
+  P-value                                        0.000       0.000
+  Scaling correction factor                                  0.993
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.906       0.906
+  Tucker-Lewis Index (TLI)                       0.897       0.897
+                                                                  
+  Robust Comparative Fit Index (CFI)                         0.906
+  Robust Tucker-Lewis Index (TLI)                            0.897
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)             -22598.464  -22598.464
+  Scaling correction factor                                  1.008
+      for the MLR correction                                      
+  Loglikelihood unrestricted model (H1)     -21295.036  -21295.036
+  Scaling correction factor                                  0.992
+      for the MLR correction                                      
+                                                                  
+  Akaike (AIC)                               45292.928   45292.928
+  Bayesian (BIC)                             45528.500   45528.500
+  Sample-size adjusted Bayesian (SABIC)      45376.050   45376.050
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.097       0.097
+  90 Percent confidence interval - lower         0.093       0.094
+  90 Percent confidence interval - upper         0.100       0.101
+  P-value H_0: RMSEA &lt;= 0.050                    0.000       0.000
+  P-value H_0: RMSEA &gt;= 0.080                    1.000       1.000
+                                                                  
+  Robust RMSEA                                               0.097
+  90 Percent confidence interval - lower                     0.093
+  90 Percent confidence interval - upper                     0.100
+  P-value H_0: Robust RMSEA &lt;= 0.050                         0.000
+  P-value H_0: Robust RMSEA &gt;= 0.080                         1.000
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.038       0.038
+
+Parameter Estimates:
+
+  Standard errors                             Sandwich
+  Information bread                           Observed
+  Observed information based on                Hessian
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  U =~                                                                  
+    item_1_1          0.802    0.027   30.090    0.000    0.802    0.793
+    item_1_2          0.841    0.029   29.228    0.000    0.841    0.792
+    item_1_3          0.855    0.025   34.125    0.000    0.855    0.834
+    item_1_4          0.778    0.028   28.042    0.000    0.778    0.766
+    item_1_5          0.834    0.026   31.515    0.000    0.834    0.840
+    item_1_6          0.805    0.026   31.484    0.000    0.805    0.811
+    item_2_1          0.798    0.025   32.477    0.000    0.798    0.824
+    item_2_2          0.800    0.026   31.199    0.000    0.800    0.806
+    item_2_3          0.810    0.025   32.904    0.000    0.810    0.824
+    item_2_4          0.772    0.026   29.501    0.000    0.772    0.785
+    item_2_5          0.831    0.025   33.813    0.000    0.831    0.848
+    item_2_6          0.828    0.027   30.893    0.000    0.828    0.825
+    item_3_1          0.787    0.026   30.333    0.000    0.787    0.799
+    item_3_2          0.817    0.026   30.837    0.000    0.817    0.806
+    item_3_3          0.811    0.025   33.076    0.000    0.811    0.830
+    item_3_4          0.790    0.026   30.175    0.000    0.790    0.804
+    item_3_5          0.824    0.026   31.857    0.000    0.824    0.829
+    item_3_6          0.859    0.024   35.097    0.000    0.859    0.856
+    item_4_1          0.848    0.026   32.534    0.000    0.848    0.852
+    item_4_2          0.831    0.026   32.529    0.000    0.831    0.843
+    item_4_3          0.803    0.027   29.715    0.000    0.803    0.798
+    item_4_4          0.789    0.025   31.592    0.000    0.789    0.803
+    item_4_5          0.837    0.026   32.739    0.000    0.837    0.836
+    item_4_6          0.838    0.026   32.324    0.000    0.838    0.829
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .item_1_1          0.380    0.018   21.714    0.000    0.380    0.372
+   .item_1_2          0.421    0.020   21.074    0.000    0.421    0.373
+   .item_1_3          0.319    0.015   21.389    0.000    0.319    0.304
+   .item_1_4          0.426    0.020   20.907    0.000    0.426    0.413
+   .item_1_5          0.291    0.013   21.724    0.000    0.291    0.295
+   .item_1_6          0.338    0.016   20.982    0.000    0.338    0.343
+   .item_2_1          0.302    0.013   23.016    0.000    0.302    0.322
+   .item_2_2          0.346    0.017   20.671    0.000    0.346    0.351
+   .item_2_3          0.311    0.014   21.805    0.000    0.311    0.321
+   .item_2_4          0.371    0.018   20.622    0.000    0.371    0.384
+   .item_2_5          0.271    0.012   22.059    0.000    0.271    0.282
+   .item_2_6          0.321    0.015   21.567    0.000    0.321    0.319
+   .item_3_1          0.351    0.018   19.437    0.000    0.351    0.361
+   .item_3_2          0.361    0.016   22.309    0.000    0.361    0.351
+   .item_3_3          0.297    0.014   20.600    0.000    0.297    0.311
+   .item_3_4          0.340    0.016   21.103    0.000    0.340    0.353
+   .item_3_5          0.308    0.014   21.947    0.000    0.308    0.312
+   .item_3_6          0.269    0.014   19.767    0.000    0.269    0.267
+   .item_4_1          0.270    0.013   20.951    0.000    0.270    0.273
+   .item_4_2          0.282    0.012   22.629    0.000    0.282    0.290
+   .item_4_3          0.369    0.019   19.555    0.000    0.369    0.364
+   .item_4_4          0.343    0.016   22.032    0.000    0.343    0.355
+   .item_4_5          0.303    0.015   19.822    0.000    0.303    0.302
+   .item_4_6          0.319    0.014   22.573    0.000    0.319    0.313
+    U                 1.000                               1.000    1.000</code></pre>
+</div>
+</div>
+</section><section id="unidimesionalidad-tiene-sentido-1" class="slide level2"><h2>¿Unidimesionalidad tiene sentido?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">modificationindices</span>(result_ideal<span class="sc">$</span>fit_uni,</span>
+<span id="cb10-2"><a href=""></a>                    <span class="at">maximum.number =</span> <span class="dv">10</span>,</span>
+<span id="cb10-3"><a href=""></a>                    <span class="at">sort. =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         lhs op      rhs      mi   epc sepc.lv sepc.all sepc.nox
+314 item_4_1 ~~ item_4_5 105.803 0.098   0.098    0.344    0.344
+283 item_3_3 ~~ item_3_6 105.581 0.097   0.097    0.344    0.344
+325 item_4_5 ~~ item_4_6  94.935 0.101   0.101    0.324    0.324
+298 item_3_5 ~~ item_3_6  85.588 0.089   0.089    0.309    0.309
+235 item_2_5 ~~ item_2_6  84.443 0.090   0.090    0.306    0.306
+322 item_4_3 ~~ item_4_6  79.879 0.101   0.101    0.295    0.295
+177 item_2_1 ~~ item_2_6  79.558 0.092   0.092    0.296    0.296
+208 item_2_3 ~~ item_2_6  78.026 0.092   0.092    0.293    0.293
+321 item_4_3 ~~ item_4_5  76.247 0.097   0.097    0.289    0.289
+313 item_4_1 ~~ item_4_4  75.223 0.088   0.088    0.288    0.288</code></pre>
+</div>
+</div>
+</section><section id="comparación-de-ajustes" class="slide level2"><h2>Comparación de ajustes</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>psymetrics<span class="sc">::</span><span class="fu">compare_model_fit</span>(</span>
+<span id="cb12-2"><a href=""></a>  result_ideal<span class="sc">$</span>fit_uni,</span>
+<span id="cb12-3"><a href=""></a>  result_ideal<span class="sc">$</span>fit_multi,</span>
+<span id="cb12-4"><a href=""></a>  result_ideal<span class="sc">$</span>fit_bifactor</span>
+<span id="cb12-5"><a href=""></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL                     | NOBS | ESTIMATOR | NPAR |   Chi2   | Chi2_df
+------------------------------------------------------------------------
+result_ideal$fit_uni      | 1000 |    MLR    |  48  | 2634.837 |   252  
+result_ideal$fit_multi    | 1000 |    MLR    |  54  | 261.970  |   246  
+result_ideal$fit_bifactor | 1000 |    MLR    |  72  | 221.095  |   228  
+
+MODEL                     | p (Chi2) |  CFI  |  TLI  | RMSEA |   RMSEA  CI    | SRMR 
+-------------------------------------------------------------------------------------
+result_ideal$fit_uni      |  &lt; .001  | 0.906 | 0.897 | 0.097 | [0.094, 0.101] | 0.038
+result_ideal$fit_multi    |  0.231   | 0.999 | 0.999 | 0.008 | [0.000, 0.016] | 0.012
+result_ideal$fit_bifactor |  0.616   | 1.000 | 1.000 | 0.000 | [0.000, 0.012] | 0.009</code></pre>
+</div>
+</div>
 </section></section><section><section id="ejemplificación-de-un-bifactor-con-fe-dominante" class="title-slide slide level1 center"><h1>Ejemplificación de un Bifactor con FE dominante</h1>
 
 </section><section id="ejemplificación-1" class="slide level2"><h2>Ejemplificación</h2>
@@ -829,24 +998,24 @@ item_4_6 0.8576274</code></pre>
 <div class="columns">
 <div class="column" style="width:48%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>result_1f <span class="ot">&lt;-</span> <span class="fu">simulaBifactor</span>(</span>
-<span id="cb8-2"><a href=""></a>  <span class="at">sampleSize =</span> <span class="dv">1000</span>,</span>
-<span id="cb8-3"><a href=""></a>  <span class="at">nFactors =</span> <span class="dv">4</span>,</span>
-<span id="cb8-4"><a href=""></a>  <span class="at">itemsPerFactor =</span> <span class="dv">6</span>,</span>
-<span id="cb8-5"><a href=""></a>  <span class="at">loadingGeneral =</span> <span class="fl">0.8</span>,</span>
-<span id="cb8-6"><a href=""></a>  <span class="at">loadingSpecific =</span> <span class="fl">0.3</span>,</span>
-<span id="cb8-7"><a href=""></a>  <span class="at">fluctuation =</span> <span class="fl">0.05</span>,</span>
-<span id="cb8-8"><a href=""></a>  <span class="at">type_problematic =</span> <span class="st">"1f"</span>,</span>
-<span id="cb8-9"><a href=""></a>  <span class="at">mod_gen_factor =</span> <span class="fl">0.3</span>,</span>
-<span id="cb8-10"><a href=""></a>  <span class="at">mod_spec_factor =</span> <span class="fl">2.5</span>,</span>
-<span id="cb8-11"><a href=""></a>  <span class="at">estimator =</span> <span class="st">"MLR"</span></span>
-<span id="cb8-12"><a href=""></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>result_1f <span class="ot">&lt;-</span> <span class="fu">simulaBifactor</span>(</span>
+<span id="cb14-2"><a href=""></a>  <span class="at">sampleSize =</span> <span class="dv">1000</span>,</span>
+<span id="cb14-3"><a href=""></a>  <span class="at">nFactors =</span> <span class="dv">4</span>,</span>
+<span id="cb14-4"><a href=""></a>  <span class="at">itemsPerFactor =</span> <span class="dv">6</span>,</span>
+<span id="cb14-5"><a href=""></a>  <span class="at">loadingGeneral =</span> <span class="fl">0.8</span>,</span>
+<span id="cb14-6"><a href=""></a>  <span class="at">loadingSpecific =</span> <span class="fl">0.3</span>,</span>
+<span id="cb14-7"><a href=""></a>  <span class="at">fluctuation =</span> <span class="fl">0.05</span>,</span>
+<span id="cb14-8"><a href=""></a>  <span class="at">type_problematic =</span> <span class="st">"1f"</span>,</span>
+<span id="cb14-9"><a href=""></a>  <span class="at">mod_gen_factor =</span> <span class="fl">0.3</span>,</span>
+<span id="cb14-10"><a href=""></a>  <span class="at">mod_spec_factor =</span> <span class="fl">2.5</span>,</span>
+<span id="cb14-11"><a href=""></a>  <span class="at">estimator =</span> <span class="st">"MLR"</span></span>
+<span id="cb14-12"><a href=""></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:48%;">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="index_files/figure-revealjs/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="index_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center" width="480"></a></p>
+<figure><p><a href="index_files/figure-revealjs/unnamed-chunk-16-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="index_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center" width="480"></a></p>
 </figure>
 </div>
 </div>
@@ -858,7 +1027,7 @@ item_4_6 0.8576274</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="index_files/figure-revealjs/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center" width="480"></a></p>
+<figure><p><a href="index_files/figure-revealjs/unnamed-chunk-17-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="index_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center" width="480"></a></p>
 </figure>
 </div>
 </div>
@@ -867,7 +1036,7 @@ item_4_6 0.8576274</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure><p><a href="index_files/figure-revealjs/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center" width="480"></a></p>
+<figure><p><a href="index_files/figure-revealjs/unnamed-chunk-18-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="index_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center" width="480"></a></p>
 </figure>
 </div>
 </div>
@@ -875,7 +1044,7 @@ item_4_6 0.8576274</code></pre>
 </div></div>
 </section><section id="obtención-de-índices-1" class="slide level2"><h2>Obtención de Índices</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">bifactorIndices</span>(result_1f<span class="sc">$</span>fit_bifactor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">bifactorIndices</span>(result_1f<span class="sc">$</span>fit_bifactor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$ModelLevelIndices
     ECV.F       PUC   Omega.F  OmegaH.F 
@@ -915,6 +1084,135 @@ item_4_3 0.08602536
 item_4_4 0.09423379
 item_4_5 0.05222418
 item_4_6 0.05293116</code></pre>
+</div>
+</div>
+</section><section id="desajuste-del-unidimensional" class="slide level2"><h2>Desajuste del unidimensional</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">summary</span>(result_1f<span class="sc">$</span>fit_uni, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>lavaan 0.6-19 ended normally after 29 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        48
+
+  Number of observations                          1000
+
+Model Test User Model:
+                                              Standard      Scaled
+  Test Statistic                              4892.157    4893.085
+  Degrees of freedom                               252         252
+  P-value (Chi-square)                           0.000       0.000
+  Scaling correction factor                                  1.000
+    Yuan-Bentler correction (Mplus variant)                       
+
+Model Test Baseline Model:
+
+  Test statistic                             22031.913   21973.353
+  Degrees of freedom                               276         276
+  P-value                                        0.000       0.000
+  Scaling correction factor                                  1.003
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.787       0.786
+  Tucker-Lewis Index (TLI)                       0.766       0.766
+                                                                  
+  Robust Comparative Fit Index (CFI)                         0.787
+  Robust Tucker-Lewis Index (TLI)                            0.766
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)             -25417.778  -25417.778
+  Scaling correction factor                                  1.014
+      for the MLR correction                                      
+  Loglikelihood unrestricted model (H1)     -22971.700  -22971.700
+  Scaling correction factor                                  1.002
+      for the MLR correction                                      
+                                                                  
+  Akaike (AIC)                               50931.557   50931.557
+  Bayesian (BIC)                             51167.129   51167.129
+  Sample-size adjusted Bayesian (SABIC)      51014.678   51014.678
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.136       0.136
+  90 Percent confidence interval - lower         0.132       0.132
+  90 Percent confidence interval - upper         0.139       0.139
+  P-value H_0: RMSEA &lt;= 0.050                    0.000       0.000
+  P-value H_0: RMSEA &gt;= 0.080                    1.000       1.000
+                                                                  
+  Robust RMSEA                                               0.136
+  90 Percent confidence interval - lower                     0.132
+  90 Percent confidence interval - upper                     0.139
+  P-value H_0: Robust RMSEA &lt;= 0.050                         0.000
+  P-value H_0: Robust RMSEA &gt;= 0.080                         1.000
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.131       0.131
+
+Parameter Estimates:
+
+  Standard errors                             Sandwich
+  Information bread                           Observed
+  Observed information based on                Hessian
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  U =~                                                                  
+    item_1_1          0.838    0.026   31.796    0.000    0.838    0.844
+    item_1_2          0.816    0.026   31.610    0.000    0.816    0.839
+    item_1_3          0.759    0.027   28.312    0.000    0.759    0.769
+    item_1_4          0.835    0.026   32.032    0.000    0.835    0.831
+    item_1_5          0.795    0.026   30.803    0.000    0.795    0.803
+    item_1_6          0.870    0.025   34.254    0.000    0.870    0.871
+    item_2_1          0.778    0.025   31.500    0.000    0.778    0.803
+    item_2_2          0.850    0.027   31.895    0.000    0.850    0.852
+    item_2_3          0.861    0.026   32.865    0.000    0.861    0.844
+    item_2_4          0.760    0.026   29.660    0.000    0.760    0.784
+    item_2_5          0.792    0.026   29.983    0.000    0.792    0.780
+    item_2_6          0.849    0.025   33.707    0.000    0.849    0.858
+    item_3_1          0.786    0.027   29.024    0.000    0.786    0.788
+    item_3_2          0.798    0.027   29.228    0.000    0.798    0.806
+    item_3_3          0.820    0.025   32.663    0.000    0.820    0.821
+    item_3_4          0.791    0.026   30.420    0.000    0.791    0.798
+    item_3_5          0.823    0.025   33.173    0.000    0.823    0.855
+    item_3_6          0.824    0.024   33.817    0.000    0.824    0.837
+    item_4_1          0.246    0.034    7.243    0.000    0.246    0.239
+    item_4_2          0.301    0.034    8.975    0.000    0.301    0.295
+    item_4_3          0.231    0.033    6.969    0.000    0.231    0.230
+    item_4_4          0.281    0.035    7.978    0.000    0.281    0.269
+    item_4_5          0.201    0.034    5.887    0.000    0.201    0.201
+    item_4_6          0.192    0.033    5.870    0.000    0.192    0.190
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .item_1_1          0.283    0.013   21.932    0.000    0.283    0.287
+   .item_1_2          0.280    0.013   21.199    0.000    0.280    0.296
+   .item_1_3          0.397    0.019   21.022    0.000    0.397    0.408
+   .item_1_4          0.314    0.015   21.053    0.000    0.314    0.310
+   .item_1_5          0.348    0.017   20.597    0.000    0.348    0.355
+   .item_1_6          0.239    0.012   20.263    0.000    0.239    0.241
+   .item_2_1          0.332    0.017   19.149    0.000    0.332    0.355
+   .item_2_2          0.272    0.013   20.207    0.000    0.272    0.274
+   .item_2_3          0.299    0.014   21.598    0.000    0.299    0.288
+   .item_2_4          0.362    0.017   21.136    0.000    0.362    0.385
+   .item_2_5          0.403    0.018   22.133    0.000    0.403    0.391
+   .item_2_6          0.257    0.012   21.010    0.000    0.257    0.263
+   .item_3_1          0.377    0.019   19.808    0.000    0.377    0.379
+   .item_3_2          0.344    0.016   22.013    0.000    0.344    0.350
+   .item_3_3          0.325    0.015   21.500    0.000    0.325    0.326
+   .item_3_4          0.357    0.017   21.227    0.000    0.357    0.363
+   .item_3_5          0.249    0.012   20.700    0.000    0.249    0.269
+   .item_3_6          0.291    0.013   21.519    0.000    0.291    0.300
+   .item_4_1          0.999    0.046   21.817    0.000    0.999    0.943
+   .item_4_2          0.947    0.043   21.914    0.000    0.947    0.913
+   .item_4_3          0.960    0.044   21.916    0.000    0.960    0.947
+   .item_4_4          1.010    0.044   22.964    0.000    1.010    0.928
+   .item_4_5          0.959    0.044   21.898    0.000    0.959    0.960
+   .item_4_6          0.985    0.042   23.292    0.000    0.985    0.964
+    U                 1.000                               1.000    1.000</code></pre>
 </div>
 </div>
 </section><section id="references" class="slide level2 smaller scrollable"><h2>References</h2>
@@ -966,7 +1264,7 @@ Rodriguez, Anthony, Steven P. Reise, y Mark G. Haviland. 2016. <span>«Applying 
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
