@@ -15,6 +15,7 @@ execute:
   dpi: 300
   cache: true
 slslslslslide-number: true
+lightbox: true
 bibliography: references.bib
 embed-resources: true
 editor_options: 
@@ -126,7 +127,6 @@ Para evaluar si los ítems son adecuados para definir variables latentes en un m
     \operatorname{diag}\Bigl(\Phi \,\Lambda^T\, \Sigma^{-1}\,\Lambda \,\Phi\Bigr)^{\tfrac{1}{2}}
     $$
 
---
 
 ## Índices de FD y H
 
@@ -160,7 +160,6 @@ Para determinar si la medida puede tratarse como esencialmente unidimensional, s
     $$
     Un valor alto (p.ej., \> 0.70) sugiere que la mayor parte de la varianza común se debe al factor general.
 
---
 
 ## Unidimensionalidad esencial
 
@@ -174,14 +173,292 @@ Para determinar si la medida puede tratarse como esencialmente unidimensional, s
     \text{PUC} \;=\; 
     1 \;-\; 
     \frac{
-    \text{número de correlaciones entre ítems que comparten el mismo factor de grupo}
+    \text{número de correlaciones entre ítems del mismo factor}
     }{
     \text{número total de correlaciones}
     }
     $$
 
 
+# Ejemplificación de un Bifactor Perfecto
 
+## Ejemplificación
+
+Con una muestra suficiente, 4 factores con 6 ítems en cada factor y un buen comportamiento bifactorial.
+
+::: columns
+::: {.column width="48%"}
+```{r}
+library(lavaan)
+library(semPlot)
+library(BifactorIndicesCalculator)
+source("simulaBifactor.R")
+
+result_ideal <- simulaBifactor(
+  sampleSize = 1000,
+  nFactors = 4,
+  itemsPerFactor = 6,
+  loadingGeneral = 0.8,
+  loadingSpecific = 0.3,
+  fluctuation = 0.05,
+  type_problematic = "perfect",
+  estimator = "MLR"
+)
+```
+
+:::
+
+::: {.column width="48%"}
+
+```{r}
+#| include: false
+
+bif_plot01 <- semPaths(
+  result_ideal$fit_bifactor,
+  what = "std",
+  weighted = FALSE,
+  layout = "tree2",
+  bifactor = "F",
+  rotation = 2,
+  sizeMan = 8,
+  sizeMan2 = 2,
+  sizeLat = 6,
+  residuals = FALSE,
+  edge.label.cex = 0.7,
+  edge.color = "black",
+  intercepts = FALSE,
+  thresholds = FALSE,
+  cardinal = "lat",
+  label.cex = 1.2,
+  mar = c(1, 1, 1, 1)
+) 
+
+bif_plot01$graphAttributes$Edges$edgeConnectPoints[25:48, 2] <- 1.6
+```
+
+```{r}
+#| echo: false
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+plot(bif_plot01)
+```
+:::
+:::
+
+## ¿Y si fuera multifactorial?
+
+::: columns
+::: {.column width="48%"}
+
+```{r}
+#| echo: false
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: center
+
+semPaths(
+  result_ideal$fit_multi,
+  what = "std",
+  weighted = FALSE,
+  layout = "tree2",
+  rotation = 2,
+  sizeMan = 8,
+  sizeMan2 = 2,
+  sizeLat = 6,
+  residuals = FALSE,
+  edge.label.cex = 0.7,
+  edge.color = "black",
+  intercepts = FALSE,
+  thresholds = FALSE,
+  cardinal = "all",
+  curvature = 2,
+  label.cex = 1.2,
+  mar = c(1, 4, 1, 2)
+)
+```
+
+:::
+
+::: {.column width="48%"}
+
+```{r}
+#| echo: false
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: center
+
+plot(bif_plot01)
+```
+:::
+:::
+
+## Solución multifactorial
+
+```{r}
+summary(result_ideal$fit_multi, fit.measures = TRUE, standardized = TRUE)
+```
+
+## Solución multifactorial
+
+```{r}
+summary(result_ideal$fit_bifactor, fit.measures = TRUE, standardized = TRUE)
+```
+
+## Organización de las cargas factoriales
+
+::: columns
+::: {.column width="48%"}
+
+```{r}
+#| echo: false
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: center
+
+psymetrics::plot_factor_loadings(
+  result_ideal$fit_multi,
+  sort = FALSE,
+  autofit = FALSE
+)
+```
+
+:::
+
+::: {.column width="48%"}
+
+```{r}
+#| echo: false
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: center
+
+psymetrics::plot_factor_loadings(
+  result_ideal$fit_bifactor,
+  sort = FALSE,
+  autofit = FALSE
+)
+```
+
+:::
+:::
+
+
+## Obtención de Índices
+
+```{r}
+bifactorIndices(result_ideal$fit_bifactor)
+```
+
+# Ejemplificación de un Bifactor con FE dominante
+
+## Ejemplificación
+
+Con una muestra suficiente, 4 factores con 6 ítems en cada factor y un buen comportamiento bifactorial.
+
+::: columns
+::: {.column width="48%"}
+```{r}
+result_1f <- simulaBifactor(
+  sampleSize = 1000,
+  nFactors = 4,
+  itemsPerFactor = 6,
+  loadingGeneral = 0.8,
+  loadingSpecific = 0.3,
+  fluctuation = 0.05,
+  type_problematic = "1f",
+  mod_gen_factor = 0.3,
+  mod_spec_factor = 2.5,
+  estimator = "MLR"
+)
+```
+
+:::
+
+::: {.column width="48%"}
+
+```{r}
+#| include: false
+
+bif_plot02 <- semPaths(
+  result_1f$fit_bifactor,
+  what = "std",
+  weighted = FALSE,
+  layout = "tree2",
+  bifactor = "F",
+  rotation = 2,
+  sizeMan = 8,
+  sizeMan2 = 2,
+  sizeLat = 6,
+  residuals = FALSE,
+  edge.label.cex = 0.7,
+  edge.color = "black",
+  intercepts = FALSE,
+  thresholds = FALSE,
+  cardinal = "lat",
+  label.cex = 1.2,
+  mar = c(1, 1, 1, 1)
+) 
+
+bif_plot02$graphAttributes$Edges$edgeConnectPoints[25:48, 2] <- 1.6
+```
+
+```{r}
+#| echo: false
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+plot(bif_plot02)
+```
+:::
+:::
+
+## Organización de las cargas factoriales
+
+::: columns
+::: {.column width="48%"}
+
+```{r}
+#| echo: false
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: center
+
+psymetrics::plot_factor_loadings(
+  result_1f$fit_multi,
+  sort = FALSE,
+  autofit = FALSE
+)
+```
+
+:::
+
+::: {.column width="48%"}
+
+```{r}
+#| echo: false
+#| fig-height: 6
+#| fig-width: 5
+#| fig-align: center
+
+psymetrics::plot_factor_loadings(
+  result_1f$fit_bifactor,
+  sort = FALSE,
+  autofit = FALSE
+)
+```
+
+:::
+:::
+
+
+## Obtención de Índices
+
+```{r}
+bifactorIndices(result_1f$fit_bifactor)
+```
 
 ## References
 

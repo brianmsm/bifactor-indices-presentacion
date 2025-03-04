@@ -1,0 +1,4 @@
+- source: index.qmd
+  netlify:
+    - id: fe06a8e8-3633-48c5-9661-ad6d6c9f8c11
+      url: https://bifactor-presentacion.netlify.app
