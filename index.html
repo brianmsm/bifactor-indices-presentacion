@@ -233,7 +233,7 @@ Brian N. Peña-Calero
     </div>
 </div>
 
-  <p class="date">04 marzo, 2025</p>
+  <p class="date">11 marzo, 2025</p>
 </section><section id="evaluaciones-de-los-índices-en-bifactor" class="slide level2"><h2>Evaluaciones de los índices en Bifactor</h2>
 <p><span class="citation" data-cites="rodriguez2016">Rodriguez, Reise, y Haviland (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span> indica 3 aspectos interpretativos relevantes en los índices bifactor:</p>
 <ol type="1">
@@ -241,7 +241,9 @@ Brian N. Peña-Calero
 <li><p><strong>¿Pueden los ítems usarse para especificar variables latentes en un contexto SEM?</strong> Indicadores: FD, H</p></li>
 <li><p><strong>¿Son las medidas esencialmente unidimensionales y, por lo tanto, deben especificarse como una única variable latente en SEM?</strong><br>
 Indicadores: ECV, PUC</p></li>
-</ol></section><section id="puntajes-totales" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Puntajes Totales</h2>
+</ol></section><section><section id="puntajes-totales-en-un-factor-general-o-específicos" class="title-slide slide level1 center"><h1>Puntajes totales en un factor general o específicos</h1>
+
+</section><section id="puntajes-totales" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Puntajes Totales</h2>
 <p>Uno de los más reportados sería el <span class="math inline">\(\omega\)</span>, que en un modelo bifactor, representa la varianza común atribuido a la suma del factor general y los factores específicos. <em>Un valor alto, refleja multidimensionalidad</em>.</p>
 <p><span class="math display">\[
 \omega =
@@ -262,7 +264,7 @@ Indicadores: ECV, PUC</p></li>
 <li>
 <span class="math inline">\(1-h^2\)</span>: Representa el error de medición.</li>
 </ul></section><section id="puntajes-totales-1" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Puntajes Totales</h2>
-<p>En tanto, el <span class="math inline">\(omega_H\)</span> estudia esta varianza común pero solo la parte que se encuentra atribuída al Factor General, eliminando la parte de los factores específicos.</p>
+<p>En tanto, el <span class="math inline">\(\omega_H\)</span> estudia esta varianza común pero solo la parte que se encuentra atribuída al Factor General, eliminando la parte de los factores específicos.</p>
 <p><span class="math display">\[
 \omega_H =
 \frac{
@@ -304,7 +306,7 @@ Indicadores: ECV, PUC</p></li>
 <li>
 <span class="math inline">\(1-h^2\)</span>: Representa el error de medición.</li>
 </ul></section><section id="puntajes-sub-escala-1" class="slide level2"><h2>Puntajes Sub-Escala:</h2>
-<p>Este omega jerárquico evaluado en la sub-escala, evalúa que tanto de la varianza común del factor específico es únicamente del factor específico. <em>Si el modelo bifactor ideal no se sostiene, este indicador debería ser alto</em>.</p>
+<p>Este omega jerárquico evaluado en la sub-escala (<span class="math inline">\(\omega_{HS}\)</span>) , indica que tanto de la varianza común del factor específico es únicamente del factor específico. <em>En un modelo bifactor que se sostiene, este indicador debería ser bajo</em>.</p>
 <p><span class="math display">\[
 \omega_{HS} =
 \frac{
@@ -322,33 +324,54 @@ Indicadores: ECV, PUC</p></li>
 <span class="math inline">\(\lambda_{\text{grp}_k}\)</span>: Cargas factoriales de los ítems sobre el <strong>factor específico</strong> (o grupo)</li>
 <li>
 <span class="math inline">\(1-h^2\)</span>: Representa el error de medición.</li>
-</ul></section><section id="índices-de-fd-y-h" class="slide level2"><h2>Índices de FD y H</h2>
+</ul></section><section id="interpretaciones-e-indicaciones" class="slide level2"><h2>Interpretaciones e indicaciones</h2>
+<ul>
+<li><p>Instrumentos modelados de forma unifactorial pueden presentar una estimación de fiabilidad <span class="math inline">\(\omega\)</span> muy alta, a pesar de que ese único factor podría tener un ajuste cuestionable o no estar representando realmente un único factor.</p></li>
+<li><p>De forma similar sucederían en los modelos multifactoriales, en los que las estimaciones de sus factores (<span class="math inline">\(\omega_s\)</span>) presenten valores altos, a pesar de que un gran % de esa <span class="math inline">\(\psi_{S_k}\)</span> realmente sean exactamente los mismos en los otros factores (un factor general no modelado).</p></li>
+<li><p>Los modelos bifactor pueden contemplar FE’s que no contengan <span class="math inline">\(\psi_{S_k}\)</span> suficiente para ser interpretados individualmente (<span class="math inline">\(\omega_{HS}\)</span> bajo), pero que a la vez contengan suficiente <span class="math inline">\(\psi_{S_k}\)</span> para tener que modelarlos y no prescindir de su especificación factorial.</p></li>
+</ul></section></section><section><section id="especifcaciones-de-los-modelos-en-contexto-sem" class="title-slide slide level1 center"><h1>Especifcaciones de los modelos en contexto SEM</h1>
+
+</section><section id="índices-de-fd-y-h" class="slide level2"><h2>Índices de FD y H</h2>
 <p>Para evaluar si los ítems son adecuados para definir variables latentes en un modelo SEM, se utilizan:</p>
 <ul>
 <li>
-<p><strong>Factor Determinacy (FD):</strong><br>
-Mide la correlación entre los puntajes estimados y la verdadera variable latente. Valores cercanos a 1 indican que el factor está bien definido.</p>
-<p><span class="math display">\[
+<strong>Factor Determinacy (FD):</strong><br>
+Mide la correlación entre los puntajes estimados y la verdadera variable latente. <span class="math display">\[
 FD \;=\;
 \operatorname{diag}\Bigl(\Phi \,\Lambda^T\, \Sigma^{-1}\,\Lambda \,\Phi\Bigr)^{\tfrac{1}{2}}
-\]</span></p>
+\]</span>
+<ul>
+<li>Valores altos (≥ 0.90) indican que el factor está medido con excelente precisión</li>
+<li>Valores moderados (0.70–0.80) pueden considerarse aceptables para algunas aplicaciones</li>
+</ul>
 </li>
 </ul></section><section id="índices-de-fd-y-h-1" class="slide level2"><h2>Índices de FD y H</h2>
 <p>Para evaluar si los ítems son adecuados para definir variables latentes en un modelo SEM, se utilizan:</p>
 <ul>
 <li>
-<p><strong>Índice H (Construct Replicability):</strong><br>
-Indica qué tan bien está definido el constructo a partir de sus indicadores. Se suele considerar un valor H ≥ 0.80 como indicador de un constructo robusto.</p>
-<p><span class="math display">\[
+<strong>Índice H (Construct Replicability):</strong><br>
+Cuan bien está definido el constructo a partir de sus indicadores. <span class="math display">\[
 H \;=\;
 \frac{1}{
 1 \;+\; \dfrac{1}{
 \displaystyle \sum_{i=1}^k \dfrac{\lambda_i^2}{1 - \lambda_i^2}
 }
 }
-\]</span></p>
+\]</span>
+<ul>
+<li>Se suele considerar un valor H ≥ 0.80 como indicador de un constructo robusto.</li>
+<li>Se considera H ≥ 0.70 como aceptable</li>
+</ul>
 </li>
-</ul></section><section id="unidimensionalidad-esencial" class="slide level2"><h2>Unidimensionalidad esencial</h2>
+</ul></section><section id="interpretaciones-e-indicaciones-1" class="slide level2"><h2>Interpretaciones e indicaciones</h2>
+<ul>
+<li>En un modelo SEM, solo se debería modelar factores específicos en los que tanto H como FD sean al menos ≥ 0.70.</li>
+<li>Una alternativa a esto, es modelar la escala como <em>esencialmente unidimensional</em>.</li>
+<li>Aunque el índice H pueda ser un buen indicador hay que prestar atención a las cargas factoriales de los ítems. Podría ser que el factor esté siendo modelado únicamente por una parte de ellos.</li>
+<li>Cargas factorialmente inusualmente altas (por ej. 0.80, 0.90, 0.30, 0.35, 0.28), podría estar debiéndose a algo distinto al factor específico al que pertenece, y no debería confiarse en las estimaciones del índice H o FD.</li>
+</ul></section></section><section><section id="unidimensionalidad-esencial" class="title-slide slide level1 center"><h1>Unidimensionalidad esencial</h1>
+
+</section><section id="índices-ecv-y-puc" class="slide level2"><h2>Índices ECV y PUC</h2>
 <p>Para determinar si la medida puede tratarse como esencialmente unidimensional, se utilizan:</p>
 <ul>
 <li>
@@ -360,25 +383,41 @@ H \;=\;
 \sum \lambda_{\text{gen}}^2
 + \sum_{k=1}^K \sum \lambda_{\text{grp}_k}^2
 }
-\]</span> Un valor alto (p.ej., &gt; 0.70) sugiere que la mayor parte de la varianza común se debe al factor general.</li>
-</ul></section><section id="unidimensionalidad-esencial-1" class="slide level2"><h2>Unidimensionalidad esencial</h2>
+\]</span>
+<ul>
+<li>Un valor alto (&gt; .70 o .80) sugiere que la mayor parte de la varianza común se debe al factor general.</li>
+<li>Valores cercanos a 1 indican unidimensionalidad suficiente.</li>
+<li>Valores bajos probablemente se asocian a que una estructura multidimensional pueda explicar mejor los datos.</li>
+</ul>
+</li>
+</ul></section><section id="índices-ecv-y-puc-1" class="slide level2"><h2>Índices ECV y PUC</h2>
 <p>Para determinar si la medida puede tratarse como esencialmente unidimensional, se utilizan:</p>
 <ul>
 <li>
-<p><strong>Percentage of Uncontaminated Correlations (PUC):</strong><br>
-Mide el porcentaje de correlaciones entre ítems que son atribuibles únicamente al factor general.<br>
-Un PUC elevado (por ejemplo, &gt; 0.80) refuerza la interpretación unidimensional.</p>
-<p><span class="math display">\[
+<strong>Percentage of Uncontaminated Correlations (PUC):</strong><br>
+% de correlaciones entre ítems debido únicamente al factor general. <span class="math display">\[
+\small
 \text{PUC} \;=\;
 1 \;-\;
 \frac{
-\text{número de correlaciones entre ítems del mismo factor}
+\text{# de correlaciones entre ítems del mismo factor}
 }{
-\text{número total de correlaciones}
+\text{# total de correlaciones}
 }
-\]</span></p>
+\normalsize
+\]</span>
+<ul>
+<li>Un PUC elevado (por ejemplo, &gt; 0.80) refuerza la interpretación unidimensional.</li>
+<li>Valores cercanos a 1 indican unidimensionalidad suficiente.</li>
+<li>Valores bajos probablemente se asocian a que una estructura multidimensional pueda explicar mejor los datos.</li>
+</ul>
 </li>
-</ul></section><section><section id="ejemplificación-de-un-bifactor-perfecto" class="title-slide slide level1 center"><h1>Ejemplificación de un Bifactor Perfecto</h1>
+</ul></section><section id="interpretaciones-e-indicaciones-2" class="slide level2"><h2>Interpretaciones e indicaciones</h2>
+<ul>
+<li>En contexto SEM, algunos instrumentos pueden tratarse/especificarse de forma unidimensional sin cometer un sesgo relevante en las estimaciones de las cargas factoriales. Esto se ve apoyado cuando ECV y PUC &gt; .70.</li>
+<li>En la revisión de <span class="citation" data-cites="rodriguez2016">Rodriguez, Reise, y Haviland (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span> observan que incluso cuando ECV se encuentra entorno a .50, si PUC es alto, podría tratarse el instrumento de forma unidimensional sin cometer un sesgo importante.</li>
+<li>PUC puede sobre-estimarse cuando se tiene muchos FE’s y pocos ítems en cada uno</li>
+</ul></section></section><section><section id="ejemplificación-de-un-bifactor-perfecto" class="title-slide slide level1 center"><h1>Ejemplificación de un Bifactor Perfecto</h1>
 
 </section><section id="ejemplificación" class="slide level2"><h2>Ejemplificación</h2>
 <p>Con una muestra suficiente, 4 factores con 6 ítems en cada factor y un buen comportamiento bifactorial.</p>
@@ -780,11 +819,11 @@ Variances:
 </div></div>
 </section><section id="obtención-de-índices" class="slide level2"><h2>Obtención de Índices</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">bifactorIndices</span>(result_ideal<span class="sc">$</span>fit_bifactor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">bifactorIndices</span>(result_ideal<span class="sc">$</span>fit_bifactor, <span class="at">UniLambda =</span> result_ideal<span class="sc">$</span>fit_uni)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$ModelLevelIndices
-    ECV.F       PUC   Omega.F  OmegaH.F 
-0.8725078 0.7826087 0.9843833 0.9499692 
+     ECV.F        PUC    Omega.F   OmegaH.F       ARPB 
+0.87250776 0.78260870 0.98438334 0.94996921 0.01564634 
 
 $FactorLevelIndices
       ECV_SS     ECV_SG    ECV_GS     Omega    OmegaH         H        FD
@@ -795,31 +834,31 @@ S3 0.1164400 0.02903263 0.8835600 0.9451736 0.1092838 0.3628306 0.7176394
 S4 0.1326829 0.03388694 0.8673171 0.9499120 0.1244707 0.4037519 0.7475393
 
 $ItemLevelIndices
-              IECV
-item_1_1 0.8663711
-item_1_2 0.8468204
-item_1_3 0.9107551
-item_1_4 0.8336930
-item_1_5 0.9040772
-item_1_6 0.8565822
-item_2_1 0.8734484
-item_2_2 0.8625154
-item_2_3 0.8655268
-item_2_4 0.8699025
-item_2_5 0.8943523
-item_2_6 0.8452077
-item_3_1 0.9029532
-item_3_2 0.9037996
-item_3_3 0.8668107
-item_3_4 0.8878542
-item_3_5 0.8718484
-item_3_6 0.8728099
-item_4_1 0.8797296
-item_4_2 0.9271263
-item_4_3 0.8427286
-item_4_4 0.8558483
-item_4_5 0.8404893
-item_4_6 0.8576274</code></pre>
+              IECV  RelParBias
+item_1_1 0.8663711 0.014460658
+item_1_2 0.8468204 0.017422707
+item_1_3 0.9107551 0.007060984
+item_1_4 0.8336930 0.018434054
+item_1_5 0.9040772 0.009175636
+item_1_6 0.8565822 0.014500438
+item_2_1 0.8734484 0.015293462
+item_2_2 0.8625154 0.018170541
+item_2_3 0.8655268 0.016415857
+item_2_4 0.8699025 0.016741597
+item_2_5 0.8943523 0.012798106
+item_2_6 0.8452077 0.019838716
+item_3_1 0.9029532 0.011477546
+item_3_2 0.9037996 0.011891050
+item_3_3 0.8668107 0.016325216
+item_3_4 0.8878542 0.014875840
+item_3_5 0.8718484 0.014984120
+item_3_6 0.8728099 0.013865285
+item_4_1 0.8797296 0.016220156
+item_4_2 0.9271263 0.009747255
+item_4_3 0.8427286 0.023415343
+item_4_4 0.8558483 0.020039570
+item_4_5 0.8404893 0.021270054
+item_4_6 0.8576274 0.021087993</code></pre>
 </div>
 </div>
 </section><section id="unidimesionalidad-tiene-sentido" class="slide level2"><h2>¿Unidimesionalidad tiene sentido?</h2>
@@ -1044,11 +1083,11 @@ result_ideal$fit_bifactor |  0.616   | 1.000 | 1.000 | 0.000 | [0.000, 0.012] | 
 </div></div>
 </section><section id="obtención-de-índices-1" class="slide level2"><h2>Obtención de Índices</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">bifactorIndices</span>(result_1f<span class="sc">$</span>fit_bifactor)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">bifactorIndices</span>(result_1f<span class="sc">$</span>fit_bifactor, <span class="at">UniLambda =</span> result_1f<span class="sc">$</span>fit_uni)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$ModelLevelIndices
-    ECV.F       PUC   Omega.F  OmegaH.F 
-0.7092450 0.7826087 0.9756456 0.8734116 
+     ECV.F        PUC    Omega.F   OmegaH.F       ARPB 
+0.70924504 0.78260870 0.97564562 0.87341158 0.03030282 
 
 $FactorLevelIndices
       ECV_SS     ECV_SG     ECV_GS     Omega     OmegaH         H        FD
@@ -1059,31 +1098,31 @@ S3 0.1199021 0.03099282 0.88009787 0.9423043 0.11240116 0.3665504 0.6916047
 S4 0.9182949 0.20291019 0.08170505 0.9088727 0.83633782 0.8930512 0.9498901
 
 $ItemLevelIndices
-               IECV
-item_1_1 0.85009284
-item_1_2 0.88169397
-item_1_3 0.86928444
-item_1_4 0.85675198
-item_1_5 0.90870438
-item_1_6 0.88631630
-item_2_1 0.89637677
-item_2_2 0.91353256
-item_2_3 0.85503152
-item_2_4 0.92492100
-item_2_5 0.91226530
-item_2_6 0.94388272
-item_3_1 0.83728707
-item_3_2 0.88324132
-item_3_3 0.87527953
-item_3_4 0.90444452
-item_3_5 0.89339748
-item_3_6 0.88565039
-item_4_1 0.08932164
-item_4_2 0.10964869
-item_4_3 0.08602536
-item_4_4 0.09423379
-item_4_5 0.05222418
-item_4_6 0.05293116</code></pre>
+               IECV  RelParBias
+item_1_1 0.85009284 0.028432228
+item_1_2 0.88169397 0.023089589
+item_1_3 0.86928444 0.027308969
+item_1_4 0.85675198 0.028556486
+item_1_5 0.90870438 0.017941978
+item_1_6 0.88631630 0.020075065
+item_2_1 0.89637677 0.013880877
+item_2_2 0.91353256 0.008851991
+item_2_3 0.85503152 0.016989561
+item_2_4 0.92492100 0.009600847
+item_2_5 0.91226530 0.010661662
+item_2_6 0.94388272 0.003058420
+item_3_1 0.83728707 0.026822345
+item_3_2 0.88324132 0.019330769
+item_3_3 0.87527953 0.021292779
+item_3_4 0.90444452 0.014253372
+item_3_5 0.89339748 0.015828147
+item_3_6 0.88565039 0.018263790
+item_4_1 0.08932164 0.055573813
+item_4_2 0.10964869 0.045674689
+item_4_3 0.08602536 0.065705580
+item_4_4 0.09423379 0.055333172
+item_4_5 0.05222418 0.092576803
+item_4_6 0.05293116 0.088164747</code></pre>
 </div>
 </div>
 </section><section id="desajuste-del-unidimensional" class="slide level2"><h2>Desajuste del unidimensional</h2>

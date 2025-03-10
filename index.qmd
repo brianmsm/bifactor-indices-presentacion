@@ -35,6 +35,8 @@ editor_options:
 3.  **¿Son las medidas esencialmente unidimensionales y, por lo tanto, deben especificarse como una única variable latente en SEM?**\
     Indicadores: ECV, PUC
 
+# Puntajes totales en un factor general o específicos
+
 ## Puntajes Totales {auto-animate="true"}
 
 Uno de los más reportados sería el $\omega$, que en un modelo bifactor, representa la varianza común atribuido a la suma del factor general y los factores específicos. *Un valor alto, refleja multidimensionalidad*.
@@ -51,13 +53,13 @@ $$
 }
 $$
 
-- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
-- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
-- $1-h^2$: Representa el error de medición.
+-   $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+-   $\lambda_{\text{grp}_k}$: Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+-   $1-h^2$: Representa el error de medición.
 
 ## Puntajes Totales {auto-animate="true"}
 
-En tanto, el $omega_H$ estudia esta varianza común pero solo la parte que se encuentra atribuída al Factor General, eliminando la parte de los factores específicos.
+En tanto, el $\omega_H$ estudia esta varianza común pero solo la parte que se encuentra atribuída al Factor General, eliminando la parte de los factores específicos.
 
 $$
 \omega_H = 
@@ -70,9 +72,9 @@ $$
 }
 $$
 
-- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
-- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
-- $1-h^2$: Representa el error de medición.
+-   $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+-   $\lambda_{\text{grp}_k}$: Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+-   $1-h^2$: Representa el error de medición.
 
 ## Puntajes Sub-Escala:
 
@@ -93,13 +95,13 @@ $$
 }
 $$
 
-- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
-- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
-- $1-h^2$: Representa el error de medición.
+-   $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+-   $\lambda_{\text{grp}_k}$: Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+-   $1-h^2$: Representa el error de medición.
 
 ## Puntajes Sub-Escala:
 
-Este omega jerárquico evaluado en la sub-escala, evalúa que tanto de la varianza común del factor específico es únicamente del factor específico. *Si el modelo bifactor ideal no se sostiene, este indicador debería ser alto*.
+Este omega jerárquico evaluado en la sub-escala ($\omega_{HS}$) , indica que tanto de la varianza común del factor específico es únicamente del factor específico. *En un modelo bifactor que se sostiene, este indicador debería ser bajo*.
 
 $$
 \omega_{HS} = 
@@ -112,32 +114,38 @@ $$
 }
 $$
 
-- $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
-- $\lambda_{\text{grp}_k}$:  Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
-- $1-h^2$: Representa el error de medición.
+-   $\lambda_{\text{gen}}$: Cargas factoriales de los ítems sobre el **factor general**.
+-   $\lambda_{\text{grp}_k}$: Cargas factoriales de los ítems sobre el **factor específico** (o grupo)
+-   $1-h^2$: Representa el error de medición.
 
+## Interpretaciones e indicaciones
+
+-   Instrumentos modelados de forma unifactorial pueden presentar una estimación de fiabilidad $\omega$ muy alta, a pesar de que ese único factor podría tener un ajuste cuestionable o no estar representando realmente un único factor.
+
+-   De forma similar sucederían en los modelos multifactoriales, en los que las estimaciones de sus factores ($\omega_s$) presenten valores altos, a pesar de que un gran % de esa $\psi_{S_k}$ realmente sean exactamente los mismos en los otros factores (un factor general no modelado).
+
+-   Los modelos bifactor pueden contemplar FE's que no contengan $\psi_{S_k}$ suficiente para ser interpretados individualmente ($\omega_{HS}$ bajo), pero que a la vez contengan suficiente $\psi_{S_k}$ para tener que modelarlos y no prescindir de su especificación factorial.
+
+# Especifcaciones de los modelos en contexto SEM
 
 ## Índices de FD y H
 
 Para evaluar si los ítems son adecuados para definir variables latentes en un modelo SEM, se utilizan:
 
 -   **Factor Determinacy (FD):**\
-    Mide la correlación entre los puntajes estimados y la verdadera variable latente. Valores cercanos a 1 indican que el factor está bien definido.
-    
-    $$
+    Mide la correlación entre los puntajes estimados y la verdadera variable latente. $$
     FD \;=\; 
     \operatorname{diag}\Bigl(\Phi \,\Lambda^T\, \Sigma^{-1}\,\Lambda \,\Phi\Bigr)^{\tfrac{1}{2}}
     $$
-
+    -   Valores altos (≥ 0.90) indican que el factor está medido con excelente precisión
+    -   Valores moderados (0.70–0.80) pueden considerarse aceptables para algunas aplicaciones
 
 ## Índices de FD y H
 
 Para evaluar si los ítems son adecuados para definir variables latentes en un modelo SEM, se utilizan:
 
 -   **Índice H (Construct Replicability):**\
-    Indica qué tan bien está definido el constructo a partir de sus indicadores. Se suele considerar un valor H ≥ 0.80 como indicador de un constructo robusto.
-    
-    $$
+    Cuan bien está definido el constructo a partir de sus indicadores. $$
     H \;=\; 
     \frac{1}{
     1 \;+\; \dfrac{1}{
@@ -145,8 +153,19 @@ Para evaluar si los ítems son adecuados para definir variables latentes en un m
     }
     }
     $$
+    -   Se suele considerar un valor H ≥ 0.80 como indicador de un constructo robusto.
+    -   Se considera H ≥ 0.70 como aceptable
 
-## Unidimensionalidad esencial
+## Interpretaciones e indicaciones
+
+-   En un modelo SEM, solo se debería modelar factores específicos en los que tanto H como FD sean al menos ≥ 0.70.
+-   Una alternativa a esto, es modelar la escala como *esencialmente unidimensional*.
+-   Aunque el índice H pueda ser un buen indicador hay que prestar atención a las cargas factoriales de los ítems. Podría ser que el factor esté siendo modelado únicamente por una parte de ellos.
+-   Cargas factorialmente inusualmente altas (por ej. 0.80, 0.90, 0.30, 0.35, 0.28), podría estar debiéndose a algo distinto al factor específico al que pertenece, y no debería confiarse en las estimaciones del índice H o FD.
+
+# Unidimensionalidad esencial
+
+## Índices ECV y PUC
 
 Para determinar si la medida puede tratarse como esencialmente unidimensional, se utilizan:
 
@@ -160,27 +179,35 @@ Para determinar si la medida puede tratarse como esencialmente unidimensional, s
     + \sum_{k=1}^K \sum \lambda_{\text{grp}_k}^2
     }
     $$
-    Un valor alto (p.ej., \> 0.70) sugiere que la mayor parte de la varianza común se debe al factor general.
+    -   Un valor alto (\> .70 o .80) sugiere que la mayor parte de la varianza común se debe al factor general.
+    -   Valores cercanos a 1 indican unidimensionalidad suficiente.
+    -   Valores bajos probablemente se asocian a que una estructura multidimensional pueda explicar mejor los datos.
 
-
-## Unidimensionalidad esencial
+## Índices ECV y PUC
 
 Para determinar si la medida puede tratarse como esencialmente unidimensional, se utilizan:
 
 -   **Percentage of Uncontaminated Correlations (PUC):**\
-    Mide el porcentaje de correlaciones entre ítems que son atribuibles únicamente al factor general.\
-    Un PUC elevado (por ejemplo, \> 0.80) refuerza la interpretación unidimensional.
-    
-    $$
+    % de correlaciones entre ítems debido únicamente al factor general. $$
+    \small
     \text{PUC} \;=\; 
     1 \;-\; 
     \frac{
-    \text{número de correlaciones entre ítems del mismo factor}
+    \text{# de correlaciones entre ítems del mismo factor}
     }{
-    \text{número total de correlaciones}
+    \text{# total de correlaciones}
     }
+    \normalsize
     $$
+    -   Un PUC elevado (por ejemplo, \> 0.80) refuerza la interpretación unidimensional.
+    -   Valores cercanos a 1 indican unidimensionalidad suficiente.
+    -   Valores bajos probablemente se asocian a que una estructura multidimensional pueda explicar mejor los datos.
 
+## Interpretaciones e indicaciones
+
+-   En contexto SEM, algunos instrumentos pueden tratarse/especificarse de forma unidimensional sin cometer un sesgo relevante en las estimaciones de las cargas factoriales. Esto se ve apoyado cuando ECV y PUC \> .70.
+-   En la revisión de @rodriguez2016 observan que incluso cuando ECV se encuentra entorno a .50, si PUC es alto, podría tratarse el instrumento de forma unidimensional sin cometer un sesgo importante.
+-   PUC puede sobre-estimarse cuando se tiene muchos FE's y pocos ítems en cada uno
 
 # Ejemplificación de un Bifactor Perfecto
 
@@ -188,7 +215,7 @@ Para determinar si la medida puede tratarse como esencialmente unidimensional, s
 
 Con una muestra suficiente, 4 factores con 6 ítems en cada factor y un buen comportamiento bifactorial.
 
-::: columns
+::::: columns
 ::: {.column width="48%"}
 ```{r}
 library(lavaan)
@@ -207,11 +234,9 @@ result_ideal <- simulaBifactor(
   estimator = "MLR"
 )
 ```
-
 :::
 
 ::: {.column width="48%"}
-
 ```{r}
 #| include: false
 
@@ -247,13 +272,12 @@ bif_plot01$graphAttributes$Edges$edgeConnectPoints[25:48, 2] <- 1.6
 plot(bif_plot01)
 ```
 :::
-:::
+:::::
 
 ## ¿Y si fuera multifactorial?
 
-::: columns
+::::: columns
 ::: {.column width="48%"}
-
 ```{r}
 #| echo: false
 #| fig-height: 6
@@ -280,11 +304,9 @@ semPaths(
   mar = c(1, 4, 1, 2)
 )
 ```
-
 :::
 
 ::: {.column width="48%"}
-
 ```{r}
 #| echo: false
 #| fig-height: 6
@@ -295,7 +317,7 @@ semPaths(
 plot(bif_plot01)
 ```
 :::
-:::
+:::::
 
 ## Solución multifactorial
 
@@ -311,9 +333,8 @@ summary(result_ideal$fit_bifactor, fit.measures = TRUE, standardized = TRUE)
 
 ## Organización de las cargas factoriales
 
-::: columns
+::::: columns
 ::: {.column width="48%"}
-
 ```{r}
 #| echo: false
 #| fig-height: 6
@@ -326,11 +347,9 @@ psymetrics::plot_factor_loadings(
   autofit = FALSE
 )
 ```
-
 :::
 
 ::: {.column width="48%"}
-
 ```{r}
 #| echo: false
 #| fig-height: 6
@@ -343,15 +362,13 @@ psymetrics::plot_factor_loadings(
   autofit = FALSE
 )
 ```
-
 :::
-:::
-
+:::::
 
 ## Obtención de Índices
 
 ```{r}
-bifactorIndices(result_ideal$fit_bifactor)
+bifactorIndices(result_ideal$fit_bifactor, UniLambda = result_ideal$fit_uni)
 ```
 
 ## ¿Unidimesionalidad tiene sentido?
@@ -371,6 +388,7 @@ modificationindices(result_ideal$fit_uni,
 ## Comparación de ajustes
 
 ```{r}
+#| cache: false
 psymetrics::compare_model_fit(
   result_ideal$fit_uni,
   result_ideal$fit_multi,
@@ -384,7 +402,7 @@ psymetrics::compare_model_fit(
 
 Con una muestra suficiente, 4 factores con 6 ítems en cada factor y un buen comportamiento bifactorial.
 
-::: columns
+::::: columns
 ::: {.column width="48%"}
 ```{r}
 result_1f <- simulaBifactor(
@@ -400,11 +418,9 @@ result_1f <- simulaBifactor(
   estimator = "MLR"
 )
 ```
-
 :::
 
 ::: {.column width="48%"}
-
 ```{r}
 #| include: false
 
@@ -440,13 +456,12 @@ bif_plot02$graphAttributes$Edges$edgeConnectPoints[25:48, 2] <- 1.6
 plot(bif_plot02)
 ```
 :::
-:::
+:::::
 
 ## Organización de las cargas factoriales
 
-::: columns
+::::: columns
 ::: {.column width="48%"}
-
 ```{r}
 #| echo: false
 #| fig-height: 6
@@ -459,11 +474,9 @@ psymetrics::plot_factor_loadings(
   autofit = FALSE
 )
 ```
-
 :::
 
 ::: {.column width="48%"}
-
 ```{r}
 #| echo: false
 #| fig-height: 6
@@ -476,17 +489,14 @@ psymetrics::plot_factor_loadings(
   autofit = FALSE
 )
 ```
-
 :::
-:::
-
+:::::
 
 ## Obtención de Índices
 
 ```{r}
-bifactorIndices(result_1f$fit_bifactor)
+bifactorIndices(result_1f$fit_bifactor, UniLambda = result_1f$fit_uni)
 ```
-
 
 ## Desajuste del unidimensional
 
@@ -498,4 +508,3 @@ summary(result_1f$fit_uni, fit.measures = TRUE, standardized = TRUE)
 
 ::: {#refs style="line-height: 2;"}
 :::
-
