@@ -1283,6 +1283,27 @@ Variances:
     U                 1.000                               1.000    1.000</code></pre>
 </div>
 </div>
+</section><section id="comparación-de-ajustes-1" class="slide level2"><h2>Comparación de ajustes</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>psymetrics<span class="sc">::</span><span class="fu">compare_model_fit</span>(</span>
+<span id="cb19-2"><a href=""></a>  result_1f<span class="sc">$</span>fit_uni,</span>
+<span id="cb19-3"><a href=""></a>  result_1f<span class="sc">$</span>fit_multi,</span>
+<span id="cb19-4"><a href=""></a>  result_1f<span class="sc">$</span>fit_bifactor</span>
+<span id="cb19-5"><a href=""></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>MODEL                  | NOBS | ESTIMATOR | NPAR |   Chi2   | Chi2_df
+---------------------------------------------------------------------
+result_1f$fit_uni      | 1000 |    MLR    |  48  | 4604.680 |   252  
+result_1f$fit_multi    | 1000 |    MLR    |  54  | 284.945  |   246  
+result_1f$fit_bifactor | 1000 |    MLR    |  72  | 245.710  |   228  
+
+MODEL                  | p (Chi2) |  CFI  |  TLI  | RMSEA |   RMSEA  CI    | SRMR 
+----------------------------------------------------------------------------------
+result_1f$fit_uni      |  &lt; .001  | 0.794 | 0.775 | 0.131 | [0.128, 0.135] | 0.131
+result_1f$fit_multi    |  0.045   | 0.998 | 0.998 | 0.013 | [0.002, 0.019] | 0.022
+result_1f$fit_bifactor |  0.201   | 0.999 | 0.999 | 0.009 | [0.000, 0.016] | 0.015</code></pre>
+</div>
+</div>
 </section><section id="references" class="slide level2 smaller scrollable"><h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" style="line-height: 2;" data-entry-spacing="0" role="list">
 <div id="ref-rodriguez2016" class="csl-entry" role="listitem">

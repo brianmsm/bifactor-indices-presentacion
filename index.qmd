@@ -16,7 +16,7 @@ date-format: "DD MMMM, YYYY"
 execute: 
   echo: true
   dpi: 300
-  cache: refresh
+  cache: true
 slslslslslide-number: true
 lightbox: true
 bibliography: references.bib
@@ -542,6 +542,17 @@ bifactorIndices(result_1f$fit_bifactor, UniLambda = result_1f$fit_uni)
 
 ```{r}
 summary(result_1f$fit_uni, fit.measures = TRUE, standardized = TRUE)
+```
+
+## Comparación de ajustes
+
+```{r}
+#| cache: false
+psymetrics::compare_model_fit(
+  result_1f$fit_uni,
+  result_1f$fit_multi,
+  result_1f$fit_bifactor
+)
 ```
 
 ## References
