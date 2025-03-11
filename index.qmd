@@ -16,7 +16,7 @@ date-format: "DD MMMM, YYYY"
 execute: 
   echo: true
   dpi: 300
-  cache: true
+  cache: refresh
 slslslslslide-number: true
 lightbox: true
 bibliography: references.bib
@@ -36,6 +36,46 @@ editor_options:
     Indicadores: ECV, PUC
 
 # Puntajes totales en un factor general o específicos
+
+## Fiabilidad en la Teoría Clásica de los Test (TCT)
+
+En la **TCT**, la fiabilidad de una medida se define como la proporción de la varianza observada que se debe a la **varianza verdadera**, excluyendo el error de medición. Se parte de la ecuación fundamental:
+
+$$
+O = V + e
+$$
+
+Donde:
+
+-   $O$ es la puntuación observada en un test
+-   $V$ es la puntuación verdadera
+-   $e$ es el error de medición
+
+## Definición de Fiabilidad
+
+Dado que la varianza de una suma de variables es:
+
+$$
+\text{Var}(O) = \text{Var}(V) + \text{Var}(e) + 2\text{Cov}(V, e)
+$$
+
+Y asumiendo en la TCT que el error es **aleatorio** y no está correlacionado con la puntuación verdadera ($\text{Cov}(V, e) = 0$), tenemos:
+
+$$
+\text{Var}(O) = \text{Var}(V) + \text{Var}(e)
+$$
+
+## Definición de Fiabilidad
+
+Por lo que la fiabilidad ($\rho$) se expresa como:
+
+$$
+\rho = \frac{\text{Var}(V)}{\text{Var}(O)} = \frac{\text{Var}(V)}{\text{Var}(V) + \text{Var}(E)}
+$$
+
+Es decir, la proporción de la varianza de la puntuación observada que es atribuible a la varianza verdadera.
+
+En el análisis factorial, se puede hacer la asunción que la carga factorial al cuadrado ($\lambda^2 = h^2$) puede ser entendida como la $\text{Var}(V)$; mientras que la unicidad ($1 - \lambda^2 = 1 - h^2 = u$) puede ser considerado como la $\text{Var}(E)$. 
 
 ## Puntajes Totales {auto-animate="true"}
 
@@ -124,7 +164,7 @@ $$
 
 -   De forma similar sucederían en los modelos multifactoriales, en los que las estimaciones de sus factores ($\omega_s$) presenten valores altos, a pesar de que un gran % de esa $\psi_{S_k}$ realmente sean exactamente los mismos en los otros factores (un factor general no modelado).
 
--   Los modelos bifactor pueden contemplar FE's que no contengan $\psi_{S_k}$ suficiente para ser interpretados individualmente ($\omega_{HS}$ bajo), pero que a la vez contengan suficiente $\psi_{S_k}$ para tener que modelarlos y no prescindir de su especificación factorial.
+-   Los modelos bifactor pueden contemplar FE's que no contengan $\psi_{S_k}$ suficiente para ser interpretados individualmente ($\omega_{HS}$ bajo con respecto a $\omega_s$), pero que a la vez contengan suficiente $\psi_{S_k}$ para tener que modelarlos y no prescindir de su especificación factorial.
 
 # Especifcaciones de los modelos en contexto SEM
 
@@ -413,7 +453,7 @@ result_1f <- simulaBifactor(
   loadingSpecific = 0.3,
   fluctuation = 0.05,
   type_problematic = "1f",
-  mod_gen_factor = 0.3,
+  mod_gen_factor = 0.15,
   mod_spec_factor = 2.5,
   estimator = "MLR"
 )
