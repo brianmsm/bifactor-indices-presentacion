@@ -1074,7 +1074,7 @@ result_ideal$fit_bifactor |  0.616   | 1.000 | 1.000 | 0.000 | [0.000, 0.012] | 
 <span id="cb14-6"><a href=""></a>  <span class="at">loadingSpecific =</span> <span class="fl">0.3</span>,</span>
 <span id="cb14-7"><a href=""></a>  <span class="at">fluctuation =</span> <span class="fl">0.05</span>,</span>
 <span id="cb14-8"><a href=""></a>  <span class="at">type_problematic =</span> <span class="st">"1f"</span>,</span>
-<span id="cb14-9"><a href=""></a>  <span class="at">mod_gen_factor =</span> <span class="fl">0.3</span>,</span>
+<span id="cb14-9"><a href=""></a>  <span class="at">mod_gen_factor =</span> <span class="fl">0.15</span>,</span>
 <span id="cb14-10"><a href=""></a>  <span class="at">mod_spec_factor =</span> <span class="fl">2.5</span>,</span>
 <span id="cb14-11"><a href=""></a>  <span class="at">estimator =</span> <span class="st">"MLR"</span></span>
 <span id="cb14-12"><a href=""></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1116,49 +1116,49 @@ result_ideal$fit_bifactor |  0.616   | 1.000 | 1.000 | 0.000 | [0.000, 0.012] | 
 <div class="cell-output cell-output-stdout">
 <pre><code>$ModelLevelIndices
      ECV.F        PUC    Omega.F   OmegaH.F       ARPB 
-0.70924504 0.78260870 0.97564562 0.87341158 0.03030282 
+0.70564532 0.78260870 0.97275756 0.86241389 0.03276995 
 
 $FactorLevelIndices
-      ECV_SS     ECV_SG     ECV_GS     Omega     OmegaH         H        FD
-F  0.7092450 0.70924504 0.70924504 0.9756456 0.87341158 0.9723392 0.9706618
-S1 0.1249617 0.03289755 0.87503826 0.9459429 0.11735934 0.3822071 0.7117094
-S2 0.0931025 0.02395440 0.90689750 0.9412297 0.08555391 0.3059599 0.6461961
-S3 0.1199021 0.03099282 0.88009787 0.9423043 0.11240116 0.3665504 0.6916047
-S4 0.9182949 0.20291019 0.08170505 0.9088727 0.83633782 0.8930512 0.9498901
+       ECV_SS     ECV_SG     ECV_GS     Omega     OmegaH         H        FD
+F  0.70564532 0.70564532 0.70564532 0.9727576 0.86241389 0.9721486 0.9705498
+S1 0.12377861 0.03305574 0.87622139 0.9459541 0.11618284 0.3798054 0.7092911
+S2 0.09359639 0.02442729 0.90640361 0.9412326 0.08600959 0.3071786 0.6467970
+S3 0.12061010 0.03162232 0.87938990 0.9423015 0.11307017 0.3680375 0.6925122
+S4 0.97843528 0.20524934 0.02156472 0.8939206 0.87694498 0.8925204 0.9461048
 
 $ItemLevelIndices
-               IECV  RelParBias
-item_1_1 0.85009284 0.028432228
-item_1_2 0.88169397 0.023089589
-item_1_3 0.86928444 0.027308969
-item_1_4 0.85675198 0.028556486
-item_1_5 0.90870438 0.017941978
-item_1_6 0.88631630 0.020075065
-item_2_1 0.89637677 0.013880877
-item_2_2 0.91353256 0.008851991
-item_2_3 0.85503152 0.016989561
-item_2_4 0.92492100 0.009600847
-item_2_5 0.91226530 0.010661662
-item_2_6 0.94388272 0.003058420
-item_3_1 0.83728707 0.026822345
-item_3_2 0.88324132 0.019330769
-item_3_3 0.87527953 0.021292779
-item_3_4 0.90444452 0.014253372
-item_3_5 0.89339748 0.015828147
-item_3_6 0.88565039 0.018263790
-item_4_1 0.08932164 0.055573813
-item_4_2 0.10964869 0.045674689
-item_4_3 0.08602536 0.065705580
-item_4_4 0.09423379 0.055333172
-item_4_5 0.05222418 0.092576803
-item_4_6 0.05293116 0.088164747</code></pre>
+                IECV  RelParBias
+item_1_1 0.850379317 0.028620201
+item_1_2 0.883049091 0.023549057
+item_1_3 0.871138676 0.027768299
+item_1_4 0.857136869 0.028773862
+item_1_5 0.910633346 0.018337847
+item_1_6 0.887794846 0.020465061
+item_2_1 0.895192791 0.014109372
+item_2_2 0.913106323 0.009112679
+item_2_3 0.854496570 0.017244107
+item_2_4 0.924350754 0.009792271
+item_2_5 0.912127653 0.010912886
+item_2_6 0.943746537 0.003339663
+item_3_1 0.837317659 0.027392299
+item_3_2 0.882737169 0.019666295
+item_3_3 0.873845702 0.021457371
+item_3_4 0.904316752 0.014807362
+item_3_5 0.891841432 0.015901516
+item_3_6 0.885129012 0.018537898
+item_4_1 0.023031621 0.043132872
+item_4_2 0.040442512 0.027082611
+item_4_3 0.018229231 0.070660735
+item_4_4 0.031037736 0.040020457
+item_4_5 0.006400103 0.140046567
+item_4_6 0.005574720 0.135747559</code></pre>
 </div>
 </div>
 </section><section id="desajuste-del-unidimensional" class="slide level2"><h2>Desajuste del unidimensional</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">summary</span>(result_1f<span class="sc">$</span>fit_uni, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>lavaan 0.6-19 ended normally after 29 iterations
+<pre><code>lavaan 0.6-19 ended normally after 27 iterations
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -1168,7 +1168,7 @@ item_4_6 0.05293116 0.088164747</code></pre>
 
 Model Test User Model:
                                               Standard      Scaled
-  Test Statistic                              4892.157    4893.085
+  Test Statistic                              4604.696    4604.680
   Degrees of freedom                               252         252
   P-value (Chi-square)                           0.000       0.000
   Scaling correction factor                                  1.000
@@ -1176,43 +1176,43 @@ Model Test User Model:
 
 Model Test Baseline Model:
 
-  Test statistic                             22031.913   21973.353
+  Test statistic                             21500.542   21446.107
   Degrees of freedom                               276         276
   P-value                                        0.000       0.000
   Scaling correction factor                                  1.003
 
 User Model versus Baseline Model:
 
-  Comparative Fit Index (CFI)                    0.787       0.786
-  Tucker-Lewis Index (TLI)                       0.766       0.766
+  Comparative Fit Index (CFI)                    0.795       0.794
+  Tucker-Lewis Index (TLI)                       0.775       0.775
                                                                   
-  Robust Comparative Fit Index (CFI)                         0.787
-  Robust Tucker-Lewis Index (TLI)                            0.766
+  Robust Comparative Fit Index (CFI)                         0.795
+  Robust Tucker-Lewis Index (TLI)                            0.775
 
 Loglikelihood and Information Criteria:
 
-  Loglikelihood user model (H0)             -25417.778  -25417.778
-  Scaling correction factor                                  1.014
+  Loglikelihood user model (H0)             -25548.386  -25548.386
+  Scaling correction factor                                  1.013
       for the MLR correction                                      
-  Loglikelihood unrestricted model (H1)     -22971.700  -22971.700
+  Loglikelihood unrestricted model (H1)     -23246.038  -23246.038
   Scaling correction factor                                  1.002
       for the MLR correction                                      
                                                                   
-  Akaike (AIC)                               50931.557   50931.557
-  Bayesian (BIC)                             51167.129   51167.129
-  Sample-size adjusted Bayesian (SABIC)      51014.678   51014.678
+  Akaike (AIC)                               51192.772   51192.772
+  Bayesian (BIC)                             51428.344   51428.344
+  Sample-size adjusted Bayesian (SABIC)      51275.894   51275.894
 
 Root Mean Square Error of Approximation:
 
-  RMSEA                                          0.136       0.136
-  90 Percent confidence interval - lower         0.132       0.132
-  90 Percent confidence interval - upper         0.139       0.139
+  RMSEA                                          0.131       0.131
+  90 Percent confidence interval - lower         0.128       0.128
+  90 Percent confidence interval - upper         0.135       0.135
   P-value H_0: RMSEA &lt;= 0.050                    0.000       0.000
   P-value H_0: RMSEA &gt;= 0.080                    1.000       1.000
                                                                   
-  Robust RMSEA                                               0.136
-  90 Percent confidence interval - lower                     0.132
-  90 Percent confidence interval - upper                     0.139
+  Robust RMSEA                                               0.131
+  90 Percent confidence interval - lower                     0.128
+  90 Percent confidence interval - upper                     0.135
   P-value H_0: Robust RMSEA &lt;= 0.050                         0.000
   P-value H_0: Robust RMSEA &gt;= 0.080                         1.000
 
@@ -1229,57 +1229,57 @@ Parameter Estimates:
 Latent Variables:
                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
   U =~                                                                  
-    item_1_1          0.838    0.026   31.796    0.000    0.838    0.844
-    item_1_2          0.816    0.026   31.610    0.000    0.816    0.839
-    item_1_3          0.759    0.027   28.312    0.000    0.759    0.769
-    item_1_4          0.835    0.026   32.032    0.000    0.835    0.831
-    item_1_5          0.795    0.026   30.803    0.000    0.795    0.803
-    item_1_6          0.870    0.025   34.254    0.000    0.870    0.871
-    item_2_1          0.778    0.025   31.500    0.000    0.778    0.803
-    item_2_2          0.850    0.027   31.895    0.000    0.850    0.852
-    item_2_3          0.861    0.026   32.865    0.000    0.861    0.844
-    item_2_4          0.760    0.026   29.660    0.000    0.760    0.784
-    item_2_5          0.792    0.026   29.983    0.000    0.792    0.780
-    item_2_6          0.849    0.025   33.707    0.000    0.849    0.858
-    item_3_1          0.786    0.027   29.024    0.000    0.786    0.788
-    item_3_2          0.798    0.027   29.228    0.000    0.798    0.806
-    item_3_3          0.820    0.025   32.663    0.000    0.820    0.821
-    item_3_4          0.791    0.026   30.420    0.000    0.791    0.798
-    item_3_5          0.823    0.025   33.173    0.000    0.823    0.855
-    item_3_6          0.824    0.024   33.817    0.000    0.824    0.837
-    item_4_1          0.246    0.034    7.243    0.000    0.246    0.239
-    item_4_2          0.301    0.034    8.975    0.000    0.301    0.295
-    item_4_3          0.231    0.033    6.969    0.000    0.231    0.230
-    item_4_4          0.281    0.035    7.978    0.000    0.281    0.269
-    item_4_5          0.201    0.034    5.887    0.000    0.201    0.201
-    item_4_6          0.192    0.033    5.870    0.000    0.192    0.190
+    item_1_1          0.839    0.026   31.801    0.000    0.839    0.845
+    item_1_2          0.817    0.026   31.640    0.000    0.817    0.840
+    item_1_3          0.760    0.027   28.381    0.000    0.760    0.771
+    item_1_4          0.836    0.026   32.030    0.000    0.836    0.831
+    item_1_5          0.796    0.026   30.902    0.000    0.796    0.804
+    item_1_6          0.871    0.025   34.318    0.000    0.871    0.873
+    item_2_1          0.778    0.025   31.468    0.000    0.778    0.803
+    item_2_2          0.850    0.027   31.886    0.000    0.850    0.852
+    item_2_3          0.861    0.026   32.849    0.000    0.861    0.844
+    item_2_4          0.760    0.026   29.659    0.000    0.760    0.784
+    item_2_5          0.792    0.026   29.977    0.000    0.792    0.781
+    item_2_6          0.849    0.025   33.720    0.000    0.849    0.859
+    item_3_1          0.787    0.027   29.055    0.000    0.787    0.788
+    item_3_2          0.798    0.027   29.210    0.000    0.798    0.806
+    item_3_3          0.820    0.025   32.629    0.000    0.820    0.821
+    item_3_4          0.791    0.026   30.442    0.000    0.791    0.798
+    item_3_5          0.823    0.025   33.135    0.000    0.823    0.855
+    item_3_6          0.824    0.024   33.830    0.000    0.824    0.837
+    item_4_1          0.119    0.034    3.495    0.000    0.119    0.116
+    item_4_2          0.173    0.034    5.120    0.000    0.173    0.170
+    item_4_3          0.103    0.034    3.059    0.002    0.103    0.102
+    item_4_4          0.154    0.036    4.334    0.000    0.154    0.147
+    item_4_5          0.071    0.034    2.074    0.038    0.071    0.071
+    item_4_6          0.064    0.033    1.925    0.054    0.064    0.063
 
 Variances:
                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-   .item_1_1          0.283    0.013   21.932    0.000    0.283    0.287
-   .item_1_2          0.280    0.013   21.199    0.000    0.280    0.296
-   .item_1_3          0.397    0.019   21.022    0.000    0.397    0.408
-   .item_1_4          0.314    0.015   21.053    0.000    0.314    0.310
-   .item_1_5          0.348    0.017   20.597    0.000    0.348    0.355
-   .item_1_6          0.239    0.012   20.263    0.000    0.239    0.241
-   .item_2_1          0.332    0.017   19.149    0.000    0.332    0.355
-   .item_2_2          0.272    0.013   20.207    0.000    0.272    0.274
-   .item_2_3          0.299    0.014   21.598    0.000    0.299    0.288
-   .item_2_4          0.362    0.017   21.136    0.000    0.362    0.385
-   .item_2_5          0.403    0.018   22.133    0.000    0.403    0.391
-   .item_2_6          0.257    0.012   21.010    0.000    0.257    0.263
-   .item_3_1          0.377    0.019   19.808    0.000    0.377    0.379
-   .item_3_2          0.344    0.016   22.013    0.000    0.344    0.350
-   .item_3_3          0.325    0.015   21.500    0.000    0.325    0.326
-   .item_3_4          0.357    0.017   21.227    0.000    0.357    0.363
-   .item_3_5          0.249    0.012   20.700    0.000    0.249    0.269
-   .item_3_6          0.291    0.013   21.519    0.000    0.291    0.300
-   .item_4_1          0.999    0.046   21.817    0.000    0.999    0.943
-   .item_4_2          0.947    0.043   21.914    0.000    0.947    0.913
-   .item_4_3          0.960    0.044   21.916    0.000    0.960    0.947
-   .item_4_4          1.010    0.044   22.964    0.000    1.010    0.928
-   .item_4_5          0.959    0.044   21.898    0.000    0.959    0.960
-   .item_4_6          0.985    0.042   23.292    0.000    0.985    0.964
+   .item_1_1          0.282    0.013   21.970    0.000    0.282    0.286
+   .item_1_2          0.278    0.013   21.137    0.000    0.278    0.294
+   .item_1_3          0.395    0.019   20.939    0.000    0.395    0.406
+   .item_1_4          0.313    0.015   21.094    0.000    0.313    0.309
+   .item_1_5          0.346    0.017   20.607    0.000    0.346    0.353
+   .item_1_6          0.238    0.012   20.299    0.000    0.238    0.239
+   .item_2_1          0.333    0.017   19.125    0.000    0.333    0.355
+   .item_2_2          0.272    0.014   20.147    0.000    0.272    0.274
+   .item_2_3          0.299    0.014   21.626    0.000    0.299    0.288
+   .item_2_4          0.362    0.017   21.138    0.000    0.362    0.385
+   .item_2_5          0.403    0.018   22.085    0.000    0.403    0.391
+   .item_2_6          0.257    0.012   21.025    0.000    0.257    0.263
+   .item_3_1          0.377    0.019   19.757    0.000    0.377    0.378
+   .item_3_2          0.343    0.016   22.014    0.000    0.343    0.350
+   .item_3_3          0.326    0.015   21.486    0.000    0.326    0.327
+   .item_3_4          0.357    0.017   21.207    0.000    0.357    0.363
+   .item_3_5          0.250    0.012   20.702    0.000    0.250    0.270
+   .item_3_6          0.291    0.014   21.470    0.000    0.291    0.300
+   .item_4_1          1.039    0.047   21.938    0.000    1.039    0.987
+   .item_4_2          1.010    0.045   22.266    0.000    1.010    0.971
+   .item_4_3          1.011    0.046   22.108    0.000    1.011    0.990
+   .item_4_4          1.067    0.046   23.140    0.000    1.067    0.978
+   .item_4_5          0.999    0.045   22.085    0.000    0.999    0.995
+   .item_4_6          1.024    0.044   23.372    0.000    1.024    0.996
     U                 1.000                               1.000    1.000</code></pre>
 </div>
 </div>
