@@ -243,6 +243,35 @@ Brian N. Peña-Calero
 Indicadores: ECV, PUC</p></li>
 </ol></section><section><section id="puntajes-totales-en-un-factor-general-o-específicos" class="title-slide slide level1 center"><h1>Puntajes totales en un factor general o específicos</h1>
 
+</section><section id="fiabilidad-en-la-teoría-clásica-de-los-test-tct" class="slide level2"><h2>Fiabilidad en la Teoría Clásica de los Test (TCT)</h2>
+<p>En la <strong>TCT</strong>, la fiabilidad de una medida se define como la proporción de la varianza observada que se debe a la <strong>varianza verdadera</strong>, excluyendo el error de medición. Se parte de la ecuación fundamental:</p>
+<p><span class="math display">\[
+O = V + e
+\]</span></p>
+<p>Donde:</p>
+<ul>
+<li>
+<span class="math inline">\(O\)</span> es la puntuación observada en un test</li>
+<li>
+<span class="math inline">\(V\)</span> es la puntuación verdadera</li>
+<li>
+<span class="math inline">\(e\)</span> es el error de medición</li>
+</ul></section><section id="definición-de-fiabilidad" class="slide level2"><h2>Definición de Fiabilidad</h2>
+<p>Dado que la varianza de una suma de variables es:</p>
+<p><span class="math display">\[
+\text{Var}(O) = \text{Var}(V) + \text{Var}(e) + 2\text{Cov}(V, e)
+\]</span></p>
+<p>Y asumiendo en la TCT que el error es <strong>aleatorio</strong> y no está correlacionado con la puntuación verdadera (<span class="math inline">\(\text{Cov}(V, e) = 0\)</span>), tenemos:</p>
+<p><span class="math display">\[
+\text{Var}(O) = \text{Var}(V) + \text{Var}(e)
+\]</span></p>
+</section><section id="definición-de-fiabilidad-1" class="slide level2"><h2>Definición de Fiabilidad</h2>
+<p>Por lo que la fiabilidad (<span class="math inline">\(\rho\)</span>) se expresa como:</p>
+<p><span class="math display">\[
+\rho = \frac{\text{Var}(V)}{\text{Var}(O)} = \frac{\text{Var}(V)}{\text{Var}(V) + \text{Var}(E)}
+\]</span></p>
+<p>Es decir, la proporción de la varianza de la puntuación observada que es atribuible a la varianza verdadera.</p>
+<p>En el análisis factorial, se puede hacer la asunción que la carga factorial al cuadrado (<span class="math inline">\(\lambda^2 = h^2\)</span>) puede ser entendida como la <span class="math inline">\(\text{Var}(V)\)</span>; mientras que la unicidad (<span class="math inline">\(1 - \lambda^2 = 1 - h^2 = u\)</span>) puede ser considerado como la <span class="math inline">\(\text{Var}(E)\)</span>.</p>
 </section><section id="puntajes-totales" class="slide level2" data-auto-animate="true"><h2 data-id="quarto-animate-title">Puntajes Totales</h2>
 <p>Uno de los más reportados sería el <span class="math inline">\(\omega\)</span>, que en un modelo bifactor, representa la varianza común atribuido a la suma del factor general y los factores específicos. <em>Un valor alto, refleja multidimensionalidad</em>.</p>
 <p><span class="math display">\[
@@ -328,7 +357,7 @@ Indicadores: ECV, PUC</p></li>
 <ul>
 <li><p>Instrumentos modelados de forma unifactorial pueden presentar una estimación de fiabilidad <span class="math inline">\(\omega\)</span> muy alta, a pesar de que ese único factor podría tener un ajuste cuestionable o no estar representando realmente un único factor.</p></li>
 <li><p>De forma similar sucederían en los modelos multifactoriales, en los que las estimaciones de sus factores (<span class="math inline">\(\omega_s\)</span>) presenten valores altos, a pesar de que un gran % de esa <span class="math inline">\(\psi_{S_k}\)</span> realmente sean exactamente los mismos en los otros factores (un factor general no modelado).</p></li>
-<li><p>Los modelos bifactor pueden contemplar FE’s que no contengan <span class="math inline">\(\psi_{S_k}\)</span> suficiente para ser interpretados individualmente (<span class="math inline">\(\omega_{HS}\)</span> bajo), pero que a la vez contengan suficiente <span class="math inline">\(\psi_{S_k}\)</span> para tener que modelarlos y no prescindir de su especificación factorial.</p></li>
+<li><p>Los modelos bifactor pueden contemplar FE’s que no contengan <span class="math inline">\(\psi_{S_k}\)</span> suficiente para ser interpretados individualmente (<span class="math inline">\(\omega_{HS}\)</span> bajo con respecto a <span class="math inline">\(\omega_s\)</span>), pero que a la vez contengan suficiente <span class="math inline">\(\psi_{S_k}\)</span> para tener que modelarlos y no prescindir de su especificación factorial.</p></li>
 </ul></section></section><section><section id="especifcaciones-de-los-modelos-en-contexto-sem" class="title-slide slide level1 center"><h1>Especifcaciones de los modelos en contexto SEM</h1>
 
 </section><section id="índices-de-fd-y-h" class="slide level2"><h2>Índices de FD y H</h2>
